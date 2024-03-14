@@ -160,7 +160,7 @@ printf '\n\r%s\n' "${BRIGHT}${RED}----------------------------------------------
 printf '\r%s\n' "${BRIGHT}${RED}[?]${NORMAL} Enter the interface to scan from as the source"
 printf '\r%s\n\n' "${BRIGHT}${RED}------------------------------------------------------${NORMAL}"
 
-read INT
+read -p "Which Interface: " INT
 
 ip addr |grep -o "eth.*:" |grep -v "ether" |cut -d ":" -f1 | grep -i -w  "$INT" >/dev/null
 
